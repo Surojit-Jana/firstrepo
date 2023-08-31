@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.log4testng.Logger;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -20,10 +21,12 @@ public class Login extends BaseClass {
 	public WebDriver driver;
 	LoginPage loginPage;
 	LandingPage landingPage;
+	Logger logger;
 	
 	@Given("Open any browser")
 	public void Open_any_browser() throws IOException {
 		driver = initialiseDriver();
+		logger.debug("Browser launched");
 	}
 	
 	@And("Navigate to login page")
